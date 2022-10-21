@@ -20,10 +20,25 @@ class MiVentana(QMainWindow):
     mensaje.setIcon(QMessageBox.Critical)
 
     #Botones
-    mensaje.setStandardButtons( QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel | QMessageBox.Ok | QMessageBox.Open | QMessageBox.Close | QMessageBox.Save | QMessageBox.SaveAll | QMessageBox.Abort | QMessageBox.Retry | QMessageBox.Ignore)
+    #botones = 0
+    #if self.si.isChecked() == True:
+      #botones = botones | QMessageBox.Yes
+    #if self.no.isChecked() == True:
+      #botones = botones | QMessageBox.NO
+    #mensaje.setStandardButtons(botones)
 
-    mensaje.exec()
+    #Todos los botones
+    #mensaje.setStandardButtons( QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel | QMessageBox.Ok | QMessageBox.Open | QMessageBox.Close | QMessageBox.Save | QMessageBox.SaveAll | QMessageBox.Abort | QMessageBox.Retry | QMessageBox.Ignore)
 
+    mensaje.setStandardButtons(QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel)
+
+    resultado = mensaje.exec()
+    if resultado == QMessageBox.Yes:
+      print('Se eligio el boton yes')
+    if resultado == QMessageBox.No:
+      print('Se eligio el boton no')
+    if resultado == QMessageBox.Cancel:
+      print('Se eligio el boton cancel')
 
 
 app = QApplication([])
