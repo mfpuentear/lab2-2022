@@ -36,6 +36,7 @@ class MiVentana(QMainWindow):
 
   def on_current_item_changed(self, itemActual, itemAnterior):
     print("Seleccion")
+    #self.lista.row(item)
     self.seleccion.setText(str(self.lista.currentRow()) + " - " + itemActual.text())
     if itemAnterior:
       print("Anterior: " + itemAnterior.text() + ", Actual: " + itemActual.text())
