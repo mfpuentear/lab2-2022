@@ -19,8 +19,8 @@ class MiVentana(QMainWindow):
     self.tabla.setHorizontalHeaderItem(2, QTableWidgetItem('e-mail'))
 
     header = self.tabla.horizontalHeader()
-    for i in range(2):
-      header.setSectionResizeMode(i, QHeaderView.ResizeToContents)
+    for i in range(3):
+      header.setSectionResizeMode(i, QHeaderView.Stretch)
 
 
     # Cantidad de filas
