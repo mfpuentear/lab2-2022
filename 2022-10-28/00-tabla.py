@@ -40,13 +40,19 @@ class MiVentana(QMainWindow):
     #self.tabla.removeColumn(columna)
 
     # Señales
-    self.tabla.cellClicked.connect(self.on_cell_clicked)
+    #self.tabla.cellClicked.connect(self.on_cell_clicked)
+    self.tabla.itemSelectionChanged.connect(self.on_item_selection_changed)
 
   
   def on_cell_clicked(self, fila, columna):
     print(fila, columna)
     item = self.tabla.item(fila, columna)
     self.seleccion.setText(item.text())
+
+  def on_item_selection_changed(self):
+    item = self.tabla.currentItem()
+    if item:
+      print(item.text(), item.row(), item.column())
 
 
 
