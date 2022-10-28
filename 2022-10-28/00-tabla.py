@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem
+from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QHeaderView
 from PyQt5 import uic
 
 class MiVentana(QMainWindow):
@@ -17,6 +17,11 @@ class MiVentana(QMainWindow):
 
     # Modicar nombre de columna
     self.tabla.setHorizontalHeaderItem(2, QTableWidgetItem('e-mail'))
+
+    header = self.tabla.horizontalHeader()
+    for i in range(2):
+      header.setSectionResizeMode(i, QHeaderView.ResizeToContents)
+
 
     # Cantidad de filas
     filas = self.tabla.rowCount()
